@@ -1,0 +1,189 @@
+@img-path: '../img/';
+@font-stack-primary: Tahoma, Geneva, sans-serif;
+@font-size-primary: 9pt;
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+  background: #ecebe8;
+
+  font-family: @font-stack-primary;
+  font-size: @font-size-primary;
+}
+
+header {
+  height: 55px;
+
+  border-bottom: 1px solid #000;
+  background: #7d7e7d;
+  background: linear-gradient(to bottom, #ddd 0%, #858585 100%);
+
+  h1 {
+    margin: 0;
+    padding: 0 25px;
+
+    color: #333;
+    box-shadow: 0 2px 3px #bbb;
+
+    font-size: 20pt;
+    font-weight: normal;
+    line-height: 55px;
+  }
+}
+
+#input {
+  position: absolute;
+  top: 25px;
+  left: 160px;
+
+  box-sizing: border-box;
+  width: 230px;
+  height: 21px;
+  padding: 0 0 0 25px;
+
+  border: 1px solid #333;
+  border-radius: 15px;
+  outline: none;
+  background: 5px 3px #fff url('@{img-path}search-icon.png') no-repeat;
+  box-shadow: 0 2px 3px #bbb inset;
+
+  font-family: @font-stack-primary;
+  font-size: 8pt;
+  line-height: 21px;
+
+  &:active,
+  &:focus {
+    box-shadow: 0 2px 3px #bbb inset, 0 0 8px 0 #1d92d8;
+  }
+}
+
+#results {
+  aside {
+    display: block;
+
+    height: 40px;
+    padding: 0 15px;
+
+    background: #fff;
+
+    p {
+      margin: 0;
+
+      font-size: 11pt;
+      line-height: 40px;
+    }
+  }
+
+  table {
+    width: 100%;
+
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+
+  tr {
+    background: #fffefc;
+
+    &:nth-child(odd) {
+      background: #ecebe8;
+    }
+
+    &:focus {
+      color: #fff;
+      outline: none;
+      background: #7ab800;
+
+      .time {
+        color: #fff;
+      }
+
+      a {
+        color: #fff;
+      }
+    }
+
+    &:first-child:hover {
+      color: #000;
+    }
+
+    a {
+      text-decoration: none;
+
+      color: #000;
+      outline: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  th {
+    height: 17px;
+    padding: 0 8px;
+
+    text-align: left;
+
+    border: 1px solid #cdccca;
+    background: linear-gradient(to bottom, #fafafa 0%, #eee 100%) 1px 1px no-repeat #fff;
+
+    line-height: 17px;
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    &:first-child {
+      padding: 0 15px;
+
+      border-left: 0;
+    }
+
+  }
+
+  td {
+    overflow: hidden;
+
+    height: 24px;
+    padding: 0 8px;
+
+    white-space: nowrap;
+
+    line-height: 24px;
+
+    &:first-child {
+      padding: 0 15px;
+    }
+
+    &.time {
+      color: #999;
+    }
+  }
+
+  .track, .artist {
+    width: 25%;
+  }
+
+  .time {
+    width: 40px;
+
+    text-align: right;
+  }
+
+  .popularity {
+    width: 59px;
+  }
+
+  div {
+    padding-top: 260px;
+
+    background: center 100px transparent url('@{img-path}search-icon-big.png') no-repeat;
+    p {
+      text-align: center;
+
+      color: #777;
+    }
+  }
+}
