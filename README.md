@@ -6,7 +6,11 @@ Inspotify shows search results instantly as you type and allows you to play musi
 
 Created back in 2010 inspired by [Google Instant](http://www.google.com/insidesearch/features/instant/about.html). Updated recently to match the current Spotify design and increase performance.
 
-## Prerequisites
+## Try it
+
+http://sin.github.io/inspotify
+
+## Requirements
 
 * [node.js](http://nodejs.org/)
 * [bower](http://bower.io/)

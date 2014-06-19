@@ -56,6 +56,12 @@ module.exports = function (grunt) {
                 cwd: 'src/js/',
                 src: '**',
                 dest: 'dist/js/'
+            },
+            publish: {
+                expand: true,
+                cwd: 'dist/',
+                src: '**',
+                dest: 'gh-pages/'
             }
         },
         uglify: {
@@ -115,5 +121,6 @@ module.exports = function (grunt) {
     grunt.registerTask('js', ['copy:js', 'uglify:main']);
     grunt.registerTask('css', ['less', 'autoprefixer']);
     grunt.registerTask('html', ['copy:html']);
+    grunt.registerTask('publish', ['copy:publish']);
     grunt.registerTask('dev', ['watch']);
 };
