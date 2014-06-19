@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inspotify</title>
+    <link rel="stylesheet" href="css/main.min.css"/>
+    <script type="text/x-mustache-template" id="resultsTemplate">
+        <aside>
+            {{#info}}
+            <p>Showing {{info.showing}} of {{info.num_results}} results for <strong>{{info.query}}</strong>.</p>
+            {{/info}}
+            {{^info}}
+            <p>Start typing to see search results...</p>
+            {{/info}}
+        </aside>
+        <table>
+            <tr id="header">
+                <th class="track">Track</th>
+                <th class="artist">Artist</th>
+                <th class="time">Time</th>
+                <th class="popularity">Popularity</th>
+                <th class="album">Album</th>
+            </tr>
+            {{#tracks}}
+            <tr data-href="{{href}}" tabindex="{{index}}">
+                <td>{{name}}</td>
+                <td><a href="{{artists.0.href}}" tabindex="-1">{{artists.0.name}}</a></td>
+                <td class="time">{{time}}</td>
+                <td><img src="img/popularity/{{popularity}}.gif" alt="{{popularity}}"></td>
+                <td><a href="{{album.name}}" tabindex="-1">{{album.name}}</a></td>
+            </tr>
+            {{/tracks}}
+        </table>
+        {{#info}}{{^tracks}}
+        <div>
+            <p>
+                Your search did not match anything in Spotify catalogue.<br>
+                Please ensure all words are spelled correctly.<br>
+                You could also try different or simpler searches.
+            </p>
+        </div>
+        {{/tracks}}{{/info}}
+        {{^info}}
+        <div>
+            <p>
+                Start typing to search in Spotify catalogue.<br>
+                Press TAB to navigate through the search results.<br>
+                Hit ENTER or double click to play.
+            </p>
+        </div>
+        {{/info}}
+    </script>
+</head>
+<body>
+<header>
+    <h1>Inspotify</h1>
+    <input type="text" id="input" tabindex='2' placeholder="Search" spellcheck="false" value=""/>
+</header>
+<section id="results">
+</section>
+<script src="js/libs/jquery.min.js"></script>
+<script src="js/libs/mustache.min.js"></script>
+<script src="js/main.min.js"></script>
+</body>
+</html>
