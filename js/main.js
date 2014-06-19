@@ -9,7 +9,7 @@ $('document').ready(function () {
 
     search = function (event) {
         if ([13, 16, 18].indexOf(event.which) !== -1) {
-            //event.stopPropagation();
+            event.stopPropagation();
             return;
         }
         if (ajax) {
@@ -21,7 +21,7 @@ $('document').ready(function () {
             var output = Mustache.render(resultsTemplate, {});
             results.html(output);
         }
-        //event.stopPropagation();
+        event.stopPropagation();
     };
 
     getTracks = function (q) {
@@ -57,7 +57,7 @@ $('document').ready(function () {
     openTrack = function (event) {
         if ((event.type === 'keypress' && event.which === 13) || event.type === 'dblclick') {
             window.location = $(event.delegateTarget).data('href');
-            //event.stopPropagation();
+            event.stopPropagation();
         } else if (event.keyCode !== 9) {
             input.focus();
         }
