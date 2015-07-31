@@ -38,10 +38,10 @@ Start the server.
 node serve.js
 ```
 
-Now go to [http://127.0.0.1:8080/](http://127.0.0.1:8080/)
+Now go to [http://localhost:8080/](http://localhost:8080/)
 
 ## Screenshots
 
-![Screenshot](static/screenshot.png "Screenshot")
+![Screenshot](static/screenshot1.png "Screenshot")
 
 ![Screenshot](static/screenshot2.png "Screenshot")

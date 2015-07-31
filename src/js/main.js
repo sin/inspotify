@@ -1,7 +1,7 @@
 $('document').ready(function () {
     'use strict';
     var search, getTracks, ajax, render, openTrack,
-        wsURL = "http://ws.spotify.com/search/1/track.json?q=",
+        wsURL = "https://api.spotify.com/v1/search?limit=30&type=track&q=",
         resultsTemplate = $('#resultsTemplate').html(),
         noSearchTemplate = $('#noSearchTemplate').html(),
         input = $('#input'),
@@ -28,24 +28,36 @@ $('document').ready(function () {
         ajax = $.getJSON(wsURL + q + '*', function (res) {
             console.log(res);
             ajax = undefined;
-            render(res);
+            render(res, q);
         });
     };
 
-    render = function (data) {
-        var i, len, track, output;
+    render = function (res, q) {
+        var i, len, track, data, output;
 
-        data.info.query = data.info.query.slice(0, -1);
-        data.info.showing = data.tracks.length;
+        data = res.tracks;
+        data.rows = data.items.length;
+        data.query = q;
 
-        for (i = 0, len = data.tracks.length; i < len; i = i + 1) {
-            track = data.tracks[i];
-            track.index = i + 2;
+        for (i = 0, len = data.items.length; i < len; i = i + 1) {
+            track = data.items[i];
+            track.index = i + 2
+            track.len = track.duration_ms / 1000
+            track.min = Math.floor(track.len / 60);
+            track.sec = Math.floor(track.len % 60);
+            track.time = track.min + ":" + (track.sec.length < 2 ? "0" + track.sec : track.sec);
+            track.popularity = Math.floor(track.popularity / 5);
+/*            track = tracks.items[i];
+            track.index = i + 2
+            track.len = track.duration_ms
+
+                        
+            
             track.len = Math.floor(track.length);
             track.min = Math.floor(track.len / 60);
             track.sec = String(track.len % 60);
             track.time = track.min + ":" + (track.sec.length < 2 ? "0" + track.sec : track.sec);
-            track.popularity = Math.floor(track.popularity * 20);
+            track.popularity = Math.floor(track.popularity * 20);*/
         }
 
         output = Mustache.render(resultsTemplate, data);
