@@ -1,10 +1,15 @@
 var express = require('express'),
     logger = require('morgan'),
+    favicon = require('serve-favicon'),
+    compress = require('compression'),
     app = express();
 
-app.use(express.favicon(__dirname + '/dist/favicon.ico', { maxAge: 345600000 }));
+var PORT = 8080,
+    CACHE_TIME = 345600000;
+
+app.use(favicon(__dirname + '/dist/favicon.ico', { maxAge:  }));
 app.use(logger('dev'));
-app.use(express.compress());
+app.use(compress());
 
 app.use(function (req, res, next) {
     'use strict';
@@ -17,4 +22,5 @@ app.use(function (req, res, next) {
 
 app.use(express.static(__dirname + '/dist'));
 
-app.listen(8080);
+app.listen(PORT);
+console.log('Listening on port ' + PORT + '.');

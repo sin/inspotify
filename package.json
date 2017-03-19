@@ -1,7 +1,7 @@
 {
-  "name": "Inspotify",
+  "name": "inspotify",
   "description": "Instant Spotify search.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": {
     "name": "Mateusz Sienkan",
     "url": "http://github.com/sin/"
@@ -11,22 +11,19 @@
     "type": "git",
     "url": "git://github.com/sin/inspotify.git"
   },
-  "licenses": [
-    {
-      "type": "GNU",
-      "url": "https://www.gnu.org/licenses/gpl-3.0.txt"
-    }
-  ],
+  "license": "GPL-3.0",
   "dependencies": {
-    "express": "^3.5.3",
-    "morgan": "^1.0.1"
+    "compression": "^1.6.2",
+    "express": "^4.15.2",
+    "morgan": "^1.8.1",
+    "serve-favicon": "^2.4.1"
   },
   "devDependencies": {
-    "grunt": "~0.4.4",
-    "grunt-contrib-uglify": "~0.4.0",
-    "grunt-contrib-watch": "~0.6.1",
-    "grunt-autoprefixer": "~0.7.2",
-    "grunt-contrib-less": "~0.11.0",
-    "grunt-contrib-copy": "~0.5.0"
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-uglify": "^2.2.0",
+    "grunt-contrib-watch": "^1.0.0"
   }
 }

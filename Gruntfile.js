@@ -15,7 +15,7 @@ module.exports = function (grunt) {
                     },
                     {
                         expand: true,
-                        cwd: 'bower_components/mustache/',
+                        cwd: 'bower_components/mustache.js/',
                         src: 'mustache.js',
                         dest: 'dist/js/libs/'
                     },

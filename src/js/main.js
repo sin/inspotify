@@ -26,7 +26,6 @@ $('document').ready(function () {
 
     getTracks = function (q) {
         ajax = $.getJSON(wsURL + q + '*', function (res) {
-            console.log(res);
             ajax = undefined;
             render(res, q);
         });
@@ -47,17 +46,6 @@ $('document').ready(function () {
             track.sec = Math.floor(track.len % 60);
             track.time = track.min + ":" + (track.sec.length < 2 ? "0" + track.sec : track.sec);
             track.popularity = Math.floor(track.popularity / 5);
-/*            track = tracks.items[i];
-            track.index = i + 2
-            track.len = track.duration_ms
-
-                        
-            
-            track.len = Math.floor(track.length);
-            track.min = Math.floor(track.len / 60);
-            track.sec = String(track.len % 60);
-            track.time = track.min + ":" + (track.sec.length < 2 ? "0" + track.sec : track.sec);
-            track.popularity = Math.floor(track.popularity * 20);*/
         }
 
         output = Mustache.render(resultsTemplate, data);
