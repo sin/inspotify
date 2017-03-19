@@ -22,12 +22,12 @@
                 <th class="album">Album</th>
             </tr>
             {{#items}}
-            <tr data-href="{{href}}" tabindex="{{index}}">
+            <tr data-href="{{uri}}" tabindex="{{index}}">
                 <td>{{name}}</td>
-                <td><a href="{{artists.0.href}}" tabindex="-1">{{artists.0.name}}</a></td>
+                <td><a href="{{artists.0.uri}}" tabindex="-1">{{artists.0.name}}</a></td>
                 <td class="time">{{time}}</td>
                 <td><img src="img/popularity/{{popularity}}.gif" alt="{{popularity}}"></td>
-                <td><a href="{{album.name}}" tabindex="-1">{{album.name}}</a></td>
+                <td><a href="{{album.uri}}" tabindex="-1">{{album.name}}</a></td>
             </tr>
             {{/items}}
         </table>
