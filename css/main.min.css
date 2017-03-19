@@ -4,7 +4,7 @@ body {
   padding: 0;
   background: #ecebe8;
   font-family: Tahoma, Geneva, sans-serif;
-  font-size: 9pt;
+  font-size: 12px;
 }
 header {
   height: 55px;
@@ -18,7 +18,7 @@ header h1 {
   padding: 0 25px;
   color: #333;
   box-shadow: 0 2px 3px #bbb;
-  font-size: 20pt;
+  font-size: 27px;
   font-weight: normal;
   line-height: 55px;
 }
@@ -36,7 +36,7 @@ header h1 {
   background: 5px 3px #fff url('../img/search-icon.png') no-repeat;
   box-shadow: 0 2px 3px #bbb inset;
   font-family: Tahoma, Geneva, sans-serif;
-  font-size: 8pt;
+  font-size: 11px;
   line-height: 21px;
 }
 #input:active,
@@ -51,7 +51,7 @@ header h1 {
 }
 #results aside p {
   margin: 0;
-  font-size: 11pt;
+  font-size: 15px;
   line-height: 40px;
 }
 #results table {
